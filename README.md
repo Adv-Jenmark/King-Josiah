@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Bible Study: The Story of King Josiah</title>
-    <!-- Chosen Palette: Ancient Scroll -->
-    <!-- Application Structure Plan: A thematic, single-page narrative journey. The user scrolls through sections: 1. Hero Introduction, 2. A "Crossroads" section comparing Josiah's choice to his heritage, 3. An interactive "Discovery" of the law, 4. A "Ripple Effect" section visualizing his reforms with a chart and interactive cards, and 5. A "Mirror" section with reflection prompts. This structure turns the linear study into an engaging story, guiding the user from historical events to personal application, which is ideal for a youth audience. -->
-    <!-- Visualization & Content Choices: 1. Heritage vs. Choice (Compare): Side-by-side HTML layout to visually represent the two paths. 2. Law Discovery (Cause/Effect): A clickable reveal shows Josiah's reaction, creating dramatic impact. 3. Reforms (Organize/Show Change): A Chart.js bar chart gives a quick visual of the transformation, while interactive HTML cards allow users to explore details without clutter. 4. Reflection (Inform/Prompt): Styled HTML cards present the study's core questions directly to the user. This structure uses simple, effective web technologies to make the content interactive and digestible. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +51,6 @@
     </style>
 </head>
 <body class="antialiased">
-
     <main>
         <!-- Section 1: Hero -->
         <section class="min-h-screen flex flex-col justify-center items-center text-center p-6 bg-stone-100 section-fade-in">
@@ -67,7 +62,6 @@
                 </svg>
             </div>
         </section>
-
         <!-- Section 2: The Crossroads -->
         <section class="py-16 md:py-24 bg-white section-fade-in">
             <div class="container mx-auto px-6">
@@ -97,7 +91,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Section 3: The Discovery -->
         <section class="py-16 md:py-24 bg-stone-100 section-fade-in">
             <div class="container mx-auto px-6 text-center">
@@ -113,7 +106,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Section 4: The Ripple Effect -->
         <section class="py-16 md:py-24 bg-white section-fade-in">
             <div class="container mx-auto px-6">
@@ -152,7 +144,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Section 5: The Mirror -->
         <section class="py-16 md:py-24 bg-teal-900/95 text-white section-fade-in">
             <div class="container mx-auto px-6">
@@ -173,7 +164,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Footer / Challenge -->
         <footer class="py-16 bg-stone-800 text-white section-fade-in">
             <div class="container mx-auto px-6 text-center">
@@ -183,7 +173,6 @@
             </div>
         </footer>
     </main>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Button interaction for Josiah's reaction
@@ -195,7 +184,6 @@
                     reactionButton.textContent = reactionReveal.classList.contains('hidden') ? "How did Josiah react?" : "Hide Reaction";
                 });
             }
-
             // Chart.js implementation
             const ctx = document.getElementById('reformationChart');
             if (ctx) {
@@ -246,7 +234,6 @@
                     }
                 });
             }
-
             // Intersection Observer for fade-in animations
             const sections = document.querySelectorAll('.section-fade-in');
             const observer = new IntersectionObserver((entries) => {
@@ -258,7 +245,6 @@
             }, {
                 threshold: 0.1
             });
-
             sections.forEach(section => {
                 observer.observe(section);
             });
